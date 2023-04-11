@@ -1,63 +1,56 @@
 ---
-title: Welcome to the documentation
+title: Welcome to the documentation of neovim dev
 geekdocNav: false
 geekdocAlign: center
 geekdocAnchor: false
 ---
 
-<!-- markdownlint-capture -->
-<!-- markdownlint-disable MD033 -->
+Neovim dev is all the plugins made by me [@glepnir](https://github.com/glepnir)
 
-<span class="badge-placeholder">[![Build Status](https://img.shields.io/drone/build/thegeeklab/hugo-geekdoc?logo=drone&server=https%3A%2F%2Fdrone.thegeeklab.de)](https://drone.thegeeklab.de/thegeeklab/hugo-geekdoc)</span>
-<span class="badge-placeholder">[![Hugo Version](https://img.shields.io/badge/hugo-0.93-blue.svg)](https://gohugo.io)</span>
-<span class="badge-placeholder">[![GitHub release](https://img.shields.io/github/v/release/thegeeklab/hugo-geekdoc)](https://github.com/thegeeklab/hugo-geekdoc/releases/latest)</span>
-<span class="badge-placeholder">[![GitHub contributors](https://img.shields.io/github/contributors/thegeeklab/hugo-geekdoc)](https://github.com/thegeeklab/hugo-geekdoc/graphs/contributors)</span>
-<span class="badge-placeholder">[![License: MIT](https://img.shields.io/github/license/thegeeklab/hugo-geekdoc)](https://github.com/thegeeklab/hugo-geekdoc/blob/main/LICENSE)</span>
-
-<!-- markdownlint-restore -->
-
-Geekdoc is a simple Hugo theme for documentations. It is intentionally designed as a fast and lean theme and may not fit the requirements of complex projects. If a more feature-complete theme is required there are a lot of got alternatives out there.
-
-{{< button size="large" relref="lspsaga/" >}}Getting Started{{< /button >}}
-
-## Feature overview
+## Plugins
 
 {{< columns >}}
 
-### Clean and simple design
+### Lspsaga.nvim
 
-Stay focused on exploring the content and don't get overwhelmed by a complex design.
-
-<--->
-
-### Light and mobile-friendly
-
-The theme is powered by less than 1 MB and looks impressive on mobile devices as well as on a regular Desktop.
+improve neovim lsp experience
+{{< button size="large" relref="lspsaga/" >}}Getting Started{{< /button >}}
 
 <--->
 
-### Easy customization
+### dashboard-nvim
 
-The look and feel can be easily customized by CSS custom properties (variables), features can be adjusted by Hugo parameters.
+Fancy blazing fast start neovim start screen
+{{< button size="large" relref="dashboard/" >}}Getting Started{{< /button >}}
+
+<--->
+
+### template.nvim
+
+Fast insert template to buffer
+{{< button size="large" relref="template/" >}}Getting Started{{< /button >}}
 
 {{< /columns >}}
 
 {{< columns >}}
 
-### Zero initial configuration
+### nerdicons.nvim
 
-Getting started in minutes. The theme is shipped with a default configuration and works out of the box.
-
-<--->
-
-### Handy shortcodes
-
-We included some (hopefully) useful custom shortcodes so you don't have to and can focus on writing amazing docs.
+Search and copy past nerd fonts icons in neovim
+{{< button size="large" relref="nerdicons/" >}}Getting Started{{< /button >}}
 
 <--->
 
-### Dark mode
+### easyformat.nvim
 
-Powerful dark mode that detects your system preferences or can be controlled by a toggle switch.
+async minimal blazing fast format plugin
+{{< button size="large" relref="easyformat/" >}}Getting Started{{< /button >}}
+
+<--->
+
+### flybuf.nvim
+
+show buffers in a float window and support use shortcut to open buffer
+{{< button size="large" relref="flybuf/" >}}Getting Started{{< /button >}}
 
 {{< /columns >}}
