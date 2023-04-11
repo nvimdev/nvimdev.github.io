@@ -20,11 +20,12 @@ jobs:
       - name: Setup Node.js to build theme
         uses: actions/setup-node@v3
         with:
-          node-version: 12
+          node-version: 18
 
       - name: Build Geekdoc theme (1/2)
         working-directory: ./themes/hugo-geekdoc
         run: npm install
+        run: npm run build
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
