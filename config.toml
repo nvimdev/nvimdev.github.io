@@ -1,167 +1,119 @@
-# this is a required setting for this theme to appear on https://themes.gohugo.io/
-# change this to a value appropriate for you; if your site is served from a subdirectory
-# set it like "https://example.com/mysite/"
-baseURL = "https://example.com/"
+baseURL = "https://dev.neovim.pro"
+title = "Neovim dev"
+theme = "hugo-geekdoc"
 
-# canonicalization will only be used for the sitemap.xml and index.xml files;
-# if set to false, a site served from a subdirectory will generate wrong links
-# inside of the above mentioned files; if you serve the page from the servers root
-# you are free to set the value to false as recommended by the official Hugo documentation
-canonifyURLs = true # true -> all relative URLs would instead be canonicalized using baseURL
-# required value to serve this page from a webserver AND the file system;
-# if you don't want to serve your page from the file system, you can also set this value
-# to false
-relativeURLs = true # true -> rewrite all relative URLs to be relative to the current content
-# if you set uglyURLs to false, this theme will append 'index.html' to any branch bundle link
-# so your page can be also served from the file system; if you don't want that,
-# set disableExplicitIndexURLs=true in the [params] section
-uglyURLs = false     # true -> basic/index.html -> basic.html
+# Required to get well formatted code blocks
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+disablePathToLower = true
+enableGitInfo = true
 
-# yeah, well, obviously a mandatory setting for your site, if you want to
-# use this theme ;-)
-theme = "hugo-theme-relearn"
-
-# the main language of this site; also an automatic pirrrate translation is
-# available in this showcase
-languageCode = "en"
-# make sure your defaultContentLanguage is the first one in the [Languages]
-# array below, as the theme needs to make assumptions on it
-defaultContentLanguage = "en"
-# if you want to get rrrid o' ourrr pirrrates nonsense uncomment th' next line
-# disableLanguages = ['pir']
-
-# the site's title of this showcase; you should change this ;-)
-title = "Hugo Relearn Documentation"
-
-# We disable this for testing the exampleSite; you must do so too
-# if you want to use the themes parameter disableGeneratorVersion=true;
-# otherwise Hugo will create a generator tag on your home page
-disableHugoGeneratorInject = true
-
-[outputs]
-  # add JSON to the home to support Lunr search; This is a mandatory setting
-  # for the search functionality
-  # add PRINT to home, section and page to activate the feature to print whole
-  # chapters
-  home = ["HTML", "RSS", "PRINT", "SEARCH", "SEARCHPAGE"]
-  section = ["HTML", "RSS", "PRINT"]
-  page = ["HTML", "RSS", "PRINT"]
+# Required if you want to render robots.txt template
+enableRobotsTXT = true
 
 [markup]
-  [markup.highlight]
-    # if `guessSyntax = true`, there will be no unstyled code even if no language
-    # was given BUT Mermaid and Math codefences will not work anymore! So this is a
-    # mandatory setting for your site if you want to use Mermaid or Math codefences
-    guessSyntax = false
-
-    # here in this showcase we use our own modified chroma syntax highlightning style
-    # which is imported in theme-relearn-light.css / theme-relearn-dark.css;
-    # if you want to use a predefined style instead:
-    # - remove the following `noClasses`
-    # - set the following `style` to a predefined style name
-    # - remove the `@import` of the self-defined chroma stylesheet from your CSS files
-    #   (here eg.: theme-relearn-light.css / theme-relearn-dark.css)
-    noClasses = false
-    # style = "tango"
-
   [markup.goldmark.renderer]
-    # activated for this showcase to use HTML and JavaScript; decide on your own needs;
-    # if in doubt, remove this line
+    # Needed for mermaid shortcode
     unsafe = true
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 9
 
-# allows `hugo server` to display this showcase in IE11; this is used for testing, as we
-# are still supporting IE11 - although with degraded experience; if you don't care about
-# `hugo server` or browsers of ancient times, fell free to remove this whole block
-[server]
-  [[server.headers]]
-    for = "**.html"
-    [server.headers.values]
-       X-UA-Compatible = "IE=edge"
+[taxonomies]
+  tag = "tags"
 
-# showcase of the menu shortcuts; you can use relative URLs linking
-# to your content or use fully-quallified URLs to link outside of
-# your project
-[Languages]
-  [Languages.en]
-    title = "Hugo Relearn Theme"
-    weight = 1
-    languageName = "English"
-    landingPageName = "<i class='fas fa-home'></i> Home"
-
-  [[Languages.en.menu.shortcuts]]
-    name = "<i class='fab fa-fw fa-github'></i> GitHub repo"
-    identifier = "ds"
-    url = "https://github.com/McShelby/hugo-theme-relearn"
-    weight = 10
-
-  [[Languages.en.menu.shortcuts]]
-    name = "<i class='fas fa-fw fa-camera'></i> Showcases"
-    url = "more/showcase/"
-    weight = 11
-
-  [[Languages.en.menu.shortcuts]]
-    name = "<i class='fas fa-fw fa-bookmark'></i> Hugo Documentation"
-    identifier = "hugodoc"
-    url = "https://gohugo.io/"
-    weight = 20
-
-  [[Languages.en.menu.shortcuts]]
-    name = "<i class='fas fa-fw fa-bullhorn'></i> Credits"
-    url = "more/credits/"
-    weight = 30
-
-  [[Languages.en.menu.shortcuts]]
-    name = "<i class='fas fa-fw fa-tags'></i> Tags"
-    url = "tags/"
-    weight = 40
-
-# mounts are only needed in this showcase to access the publicly available screenshots;
-# remove this section if you don't need further mounts
-[module]
-  [[module.mounts]]
-    source = 'archetypes'
-    target = 'archetypes'
-  [[module.mounts]]
-    source = 'assets'
-    target = 'assets'
-  [[module.mounts]]
-    source = 'content'
-    target = 'content'
-  [[module.mounts]]
-    source = 'data'
-    target = 'data'
-  [[module.mounts]]
-    source = 'i18n'
-    target = 'i18n'
-  [[module.mounts]]
-    source = '../images'
-    target = 'content/images'
-  [[module.mounts]]
-    source = 'layouts'
-    target = 'layouts'
-  [[module.mounts]]
-    source = 'static'
-    target = 'static'
-
-# settings specific to this theme's features; choose to your likings and
-# consult this documentation for explaination
 [params]
-  editURL = "https://github.com/McShelby/hugo-theme-relearn/edit/main/exampleSite/content/"
-  description = "Documentation for Hugo Relearn Theme"
-  author = "Sören Weber"
-  showVisitedLinks = true
-  collapsibleMenu = true
-  disableBreadcrumb = false
-  disableInlineCopyToClipBoard = true
-  disableNextPrev = false
-  disableLandingPageButton = true
-  titleSeparator = "::"
-  themeVariant = [ "auto", "relearn-bright", "relearn-light", "relearn-dark", "learn", "neon", "blue", "green", "red" ]
-  themeVariantAuto = [ "relearn-light", "relearn-dark" ]
-  disableSeoHiddenPages = true
-  # this is for the stylesheet generator to allow for interactivity in Mermaid
-  # graphs; you usually will not need it and you should remove this for
-  # security reasons
-  mermaidInitialize = "{ \"securityLevel\": \"loose\" }"
-  mermaidZoom = true
-  additionalContentLanguage = [ "en" ]
+  # (Optional, default 6) Set how many table of contents levels to be showed on page.
+  # Use false to hide ToC, note that 0 will default to 6 (https://gohugo.io/functions/default/)
+  # You can also specify this parameter per page in front matter.
+  geekdocToC = 3
+
+  # (Optional, default static/brand.svg) Set the path to a logo for the Geekdoc
+  # relative to your 'static/' folder.
+  geekdocLogo = "brand.svg"
+
+  # (Optional, default false) Render menu from data file in 'data/menu/main.yaml'.
+  # See also https://geekdocs.de/usage/menus/#bundle-menu.
+  geekdocMenuBundle = true
+
+  # (Optional, default false) Collapse all menu entries, can not be overwritten
+  # per page if enabled. Can be enabled per page via 'geekdocCollapseSection'.
+  geekdocCollapseAllSections = true
+
+  # (Optional, default true) Show page navigation links at the bottom of each
+  # docs page (bundle menu only).
+  geekdocNextPrev = true
+
+  # (Optional, default true) Show a breadcrumb navigation bar at the top of each docs page.
+  # You can also specify this parameter per page in front matter.
+  geekdocBreadcrumb = false
+
+  # (Optional, default none) Set source repository location. Used for 'Edit page' links.
+  # You can also specify this parameter per page in front matter.
+  geekdocRepo = "https://github.com/nvimdev"
+
+  # (Optional, default none) Enable 'Edit page' links. Requires 'GeekdocRepo' param
+  # and the path must point to the parent directory of the 'content' folder.
+  # You can also specify this parameter per page in front matter.
+  geekdocEditPath = "edit/main/exampleSite"
+
+  # (Optional, default true) Enables search function with flexsearch.
+  # Index is built on the fly and might slow down your website.
+  geekdocSearch = false
+
+  # (Optional, default false) Display search results with the parent folder as prefix. This
+  # option allows you to distinguish between files with the same name in different folders.
+  # NOTE: This parameter only applies when 'geekdocSearch = true'.
+  geekdocSearchShowParent = true
+
+  # (Optional, default none) Add a link to your Legal Notice page to the site footer.
+  # It can be either a remote url or a local file path relative to your content directory.
+  geekdocLegalNotice = "https://blog.example.com/legal"
+
+  # (Optional, default none) Add a link to your Privacy Policy page to the site footer.
+  # It can be either a remote url or a local file path relative to your content directory.
+  geekdocPrivacyPolicy = "/privacy"
+
+  # (Optional, default true) Add an anchor link to headlines.
+  geekdocAnchor = true
+
+  # (Optional, default true) Copy anchor url to clipboard on click.
+  geekdocAnchorCopy = true
+
+  # (Optional, default true) Enable or disable image lazy loading for images rendered
+  # by the 'img' shortcode.
+  geekdocImageLazyLoading = true
+
+  # (Optional, default false) Set HTMl <base> to .Site.BaseURL if enabled. It might be required
+  # if a subdirectory is used within Hugos BaseURL.
+  # See https://developer.mozilla.org/de/docs/Web/HTML/Element/base.
+  geekdocOverwriteHTMLBase = false
+
+  # (Optional, default true) Enable or disable the JavaScript based color theme toggle switch. The CSS based
+  # user preference mode still works.
+  geekdocDarkModeToggle = false
+
+  # (Optional, default false) Auto-decrease brightness of images and add a slightly grayscale to avoid
+  # bright spots while using the dark mode.
+  geekdocDarkModeDim = false
+
+  # (Optional, default false) Enforce code blocks to always use the dark color theme.
+  geekdocDarkModeCode = false
+
+  # (Optional, default true) Display a "Back to top" link in the site footer.
+  geekdocBackToTop = true
+
+  # (Optional, default false) Enable or disable adding tags for post pages automatically to the navigation sidebar.
+  geekdocTagsToMenu = true
+
+  # (Optional, default 'title') Configure how to sort file-tree menu entries. Possible options are 'title', 'linktitle',
+  # 'date', 'publishdate', 'expirydate' or 'lastmod'. Every option can be used with a reverse modifier as well
+  # e.g. 'title_reverse'.
+  geekdocFileTreeSortBy = "title"
+
+  # (Optional, default none) Adds a "Content licensed under <license>" line to the footer.
+  # Could be used if you want to define a default license for your content.
+  [params.geekdocContentLicense]
+    name = "CC BY-SA 4.0"
+    link = "https://creativecommons.org/licenses/by-sa/4.0/"
+
