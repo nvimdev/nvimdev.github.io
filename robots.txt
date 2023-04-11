@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /tags/*
+Allow: /
 
 Sitemap: https://dev.neovim.pro/sitemap.xml
