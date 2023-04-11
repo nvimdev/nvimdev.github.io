@@ -1,56 +1,29 @@
 ---
-title: Welcome to the documentation of neovim dev
-geekdocNav: false
-geekdocAlign: center
-geekdocAnchor: false
+title : "Neovim Dev Documentation"
+lead: 'neovim dev is collections all plugins that made by me <a href="https://github.com/glepnir">glepnir</a>'
+draft: false
+images: []
 ---
-
-Neovim dev is all the plugins made by me [@glepnir](https://github.com/glepnir)
-
-## Plugins
 
 {{< columns >}}
 
 ### Lspsaga.nvim
 
-improve neovim lsp experience
-{{< button size="large" relref="lspsaga/" >}}Getting Started{{< /button >}}
+Improve neovim lsp experience
+<a class="btn btn-primary btn px-4 mb-2" href="">Get Started</a>
 
 <--->
 
-### dashboard-nvim
+### Dashboard
 
-Fancy blazing fast start neovim start screen
-{{< button size="large" relref="dashboard/" >}}Getting Started{{< /button >}}
-
-<--->
-
-### template.nvim
-
-Fast insert template to buffer
-{{< button size="large" relref="template/" >}}Getting Started{{< /button >}}
-
-{{< /columns >}}
-
-{{< columns >}}
-
-### nerdicons.nvim
-
-Search and copy past nerd fonts icons in neovim
-{{< button size="large" relref="nerdicons/" >}}Getting Started{{< /button >}}
+Fancy Customize Fast start screen plugin
+<a class="btn btn-primary btn px-4 mb-2" href="">Get Started</a>
 
 <--->
 
-### easyformat.nvim
+### Template.nvim
 
-async minimal blazing fast format plugin
-{{< button size="large" relref="easyformat/" >}}Getting Started{{< /button >}}
-
-<--->
-
-### flybuf.nvim
-
-show buffers in a float window and support use shortcut to open buffer
-{{< button size="large" relref="flybuf/" >}}Getting Started{{< /button >}}
+Quickly insert template to buffer
+<a class="btn btn-primary btn px-4 mb-2" href="">Get Started</a>
 
 {{< /columns >}}
