@@ -1,4 +1,1 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://dev.neovim.pro/sitemap.xml
