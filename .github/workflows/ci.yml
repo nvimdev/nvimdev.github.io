@@ -23,13 +23,10 @@ jobs:
           node-version: 19
 
       - name: Build Geekdoc theme (1/2)
-        run: npm install postcss-cli
-
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: '0.102.3'
-          extended: true
+        run: |
+          npm install -g postcss-cli
+          npm install autoprefixer
+          npm audit fix
 
       - name: Build
         run: hugo --minify
