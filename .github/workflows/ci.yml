@@ -28,6 +28,12 @@ jobs:
           npm install autoprefixer
           npm audit fix
 
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.102.3'
+          extended: true
+
       - name: Build
         run: hugo --minify
 
