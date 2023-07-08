@@ -45,7 +45,7 @@ enableToc: false
 
 ## Backers
 
-List the people which throug paypal wechat or alipay
+List the people who through paypal wechat or alipay
 
 [@Tuo Huang](https://github.com/youngtuotuo)
 [@Scott Ming](https://github.com/scottming)
