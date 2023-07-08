@@ -36,3 +36,22 @@ enableToc: false
 
 ### Troubleshooting
 - 👀 <a href="mailto:glepnir.neovim.pro">Contact Me</a>
+
+## Sponsor
+
+<iframe src="https://github.com/sponsors/glepnir/button" title="Sponsor glepnir" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>
+
+![Wechat or Paypal](/donate.png)
+
+## Backers
+
+List the people which throug paypal wechat or alipay
+
+[@Tuo Huang](https://github.com/youngtuotuo)
+[@Scott Ming](https://github.com/scottming)
+[@Möller Lukas](https://github.com/lmllrjr)
+[@HendrikPetertje](https://github.com/HendrikPetertje)
+[@Bojan Wilytsch](https://github.com/bwilytsch)
+[@zhourrr](https://github.com/zhourrr)
+[@Burgess Darrion](https://github.com/ca-mantis-shrimp)
+[@Ceserani Alessandro](https://github.com/al-ce)
