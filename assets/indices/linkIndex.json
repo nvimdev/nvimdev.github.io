@@ -1,13 +1,2 @@
 {
-  "index": {
-    "links": {
-      "/": [
-        {
-          "source": "/",
-          "target": "/lspsaga",
-          "text": "Improve neovim built-in lsp experiences"
-        }
-      ]
-    }
-  }
 }
