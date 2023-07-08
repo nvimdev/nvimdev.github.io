@@ -16,7 +16,7 @@ command is `:Lspsaga lsp_rename`. when open rename window it will also highlight
 default options in `rename` section.
 
 - `in_select = true`          defualt is true when open rename window is select mode
-- `auto_save = true`          auto save file when rename done
+- `auto_save = false`         auto save file when rename done
 - `project_max_width = 0.5`   set project_replace float window width
 - `project_max_height = 0.5`  set project_replace Float window height
 
