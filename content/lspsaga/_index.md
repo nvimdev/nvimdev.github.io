@@ -7,6 +7,23 @@ weight: 20
 
 Improve neovim built-in lsp experiences. 
 
+## Install
+
+- lazy.nvim
+
+```lua
+require('lazy').setup(
+    {
+    'nvimdev/lspsaga.nvim',
+    ft = {filetypes}, -- or as lspconfig dependencies for lazyload
+    config = function()
+        require('lspsaga').setup({})
+    end
+    }
+)
+```
+
+
 ## Features
 
 > [Finder an Ui interface show lsp methods result](/lspsaga/finder)
