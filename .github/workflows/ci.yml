@@ -22,12 +22,6 @@ jobs:
         with:
           node-version: 19
 
-      - name: Build Geekdoc theme (1/2)
-        run: |
-          npm install -g postcss-cli
-          npm install autoprefixer
-          npm audit fix
-
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -41,6 +35,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           cname: dev.neovim.pro
