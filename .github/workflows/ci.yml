@@ -16,7 +16,6 @@ jobs:
       - name: Deploy  
         uses: peaceiris/actions-gh-pages@v3  
         with:  
-        github_token: ${{ secrets.GITHUB_TOKEN }} # this can stay as is, GitHub fills this in for us!
-        publish_dir: ./public  
-        publish_branch: gh-pages
-        cname: dev.neovim.pro
+          publish_dir: ./public  
+          publish_branch: gh-pages
+          cname: dev.neovim.pro
