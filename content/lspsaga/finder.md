@@ -1,5 +1,5 @@
 ---
-title: ":Lspsaga finder"
+title: "Finder"
 tags:
   - lspasga
 weight: 10

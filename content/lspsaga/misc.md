@@ -1,5 +1,5 @@
 ---
-title: "Breadcrumbs"
+title: "Ui Beacon"
 tags:
   - lspsaga
 weight: 10
