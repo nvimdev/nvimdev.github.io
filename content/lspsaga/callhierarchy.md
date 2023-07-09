@@ -29,6 +29,7 @@ default keymaps in `callhierarchy.keys`
 - `quit = 'q'` quit f
 - `shuttle = '[w'` shuttle bettween the layout left and right
 - `toggle_or_req = 'u'` toggle or do request.
+- `close = '<C-c>k` close layout
 
 ## Suggest Workflow
 
