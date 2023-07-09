@@ -3,7 +3,7 @@ bookCollapseSection: true
 weight: 20
 ---
 
-# indentmini.nvim
+# [indentmini.nvim](https://github.com/nvimdev/indentmini.nvim)
 
 A minimal and blazing fast indentline plugin by using `nvim_set_decoration_provide` api
 

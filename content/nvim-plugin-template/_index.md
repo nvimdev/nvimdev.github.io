@@ -3,7 +3,7 @@ bookCollapseSection: true
 weight: 20
 ---
 
-# nvim-plugin-template
+# [nvim-plugin-template](https://github.com/nvimdev/nvim-plugin-template)
 
 neovim plugin template with ci test and auto doc gen
 

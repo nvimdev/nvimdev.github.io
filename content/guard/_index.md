@@ -3,7 +3,7 @@ bookCollapseSection: true
 weight: 20
 ---
 
-# guard.nvim
+# [guard.nvim](https://github.com/nvimdev/guard.nvim)
 
 Async formatting and linting utility for neovim.
 
@@ -70,7 +70,7 @@ vim.keymap.set({'n','v'}, '<cmd>GuardFmt<CR>')
 
 Table format for custom tool:
 
-```
+```lua
 {
     cmd              --string tool command
     args             --table command arugments
