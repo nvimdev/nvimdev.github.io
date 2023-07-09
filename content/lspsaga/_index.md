@@ -28,7 +28,7 @@ require('lazy').setup(
 
 three ways to lazy load `lspsaga`
 
--  use `event = 'LspAttac'` (need latest lazy.nvim)
+-  use `event = 'LspAttach'` (need latest lazy.nvim 2023-july-9)
 -  use `ft = {filetype}` like `ft = {'c','cpp', 'lua', 'rust', 'go'},` 
 -  as a depend on `nvim-lspconfig`
 
