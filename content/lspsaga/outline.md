@@ -29,3 +29,4 @@ Default keymaps in `outline.keys` section.
 
 - `toggle_or_jump = 'o'` toggle or jump
 - `quit = 'q'` quit outline window
+- `jump = 'e'` jump to pos even on a expand/collapse node
