@@ -19,13 +19,18 @@ Improves the neovim built-in lsp experience.
 require('lazy').setup(
     {
     'nvimdev/lspsaga.nvim',
-    ft = {filetypes}, -- or you can make it an dependency of lspconfig
     config = function()
         require('lspsaga').setup({})
     end
     }
 )
 ```
+
+three ways to lazy load `lspsaga`
+
+-  use `event = 'LspAttac'` (need latest lazy.nvim)
+-  use `ft = {filetype}` like `ft = {'c','cpp', 'lua', 'rust', 'go'},` 
+-  as a depend on `nvim-lspconfig`
 
 ## Modules
 
