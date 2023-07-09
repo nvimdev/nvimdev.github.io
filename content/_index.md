@@ -19,7 +19,7 @@ enableToc: false
 
 > IndentMini: [a minimalst indent plugin](indentmini/)
 
-> dyninput.nvim: [Dynamicly change input character](dyninput/)
+> dyninput.nvim: [Dynamiclly change input character](dyninput/)
 
 > dbsession.nvim: [A simple session management plugin](dbsession/)
 
