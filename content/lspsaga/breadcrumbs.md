@@ -32,3 +32,9 @@ Default options in `symbol_in_winbar` section
 - `color_mode = true`
   - true mean the symbol name and icon have same color otherwise symbol name is light-white
 - `delay = 300` dynamic render delay
+
+## Use In Custom Statusline or winbar
+
+there has an api that you can use to get a `stl` format symbol string that you can use in statusline
+
+`require(lspsaga.symbol.winbar).get_bar()`
