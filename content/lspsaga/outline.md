@@ -21,7 +21,7 @@ default options of `outline` section.
 - `auto_preview = true` auto preview when cursor moved in outline window
 - `detail = true` show detail
 - `auto_close = true` auto close itself when outline window is last window
-- `close_after_jump = true` close after jump
+- `close_after_jump = false` close after jump
 
 ## Default keymaps
 
