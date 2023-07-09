@@ -1,43 +1,50 @@
 ---
-title: "Finder"
+title: ":Lspsaga finder"
 tags:
-- lspasga
+  - lspasga
 weight: 10
 ---
 
-## Finder Usage
+## Usage
 
-finder is a ui interface to show lsp methods result.
+Finder is an ui interface to show lsp methods search result.
 
-basiclly usage is `:Lspsaga finder` then you will see the finder layout window . It will show you the `references` and `implemnetation` results. relate options is `default = 'ref+imp'` (see above)
+Invoke `:Lspsaga finder` and you will see the finder window. By default it shows results for `references` and `implementation`.
 
 ![image](https://github.com/nvimdev/lspsaga.nvim/assets/41671631/1d957dda-5825-4d15-8d5a-ca5dd7ca63a9)
 
 ## Default Options
 
-these are defeault options in `finder` section.
+These are default options in `finder` section of the setup table.
 
-- `max_height = 0.5`        max_height of finder layout window
-- `left_width = 0.3`        finder layout left window width-
-- `default = 'ref+imp'`     default methods show in finder ref mean `references` imp mean `implementation` they are alias 
-- `methods = {}`            key is alias of lsp methods value is lsp methods which you want show in finder.
-- `layout = 'float'`        available value is `normal` or `float` normal will use normal layout window priority is lower than command layout
-- `filter = {}`             key is lsp method value is a filter handler function parameter are `client_id` `result`
+- `max_height = 0.5`
+  - max_height of the finder window
+- `left_width = 0.3`
+  - width of the left finder window
+- `default = 'ref+imp'`
+  - default search results shown, ref for `references` and imp for `implementation`
+- `methods = {}`
+  - key is alias of lsp methods, value is lsp methods which you want show in finder, more info below.
+  - for instance, methods = { 'tyd' = 'textDocument/typeDefinition' }
+- `layout = 'float'` available value is `normal` or `float`
+  - normal will use normal layout window priority is lower than command layout
+- `filter = {}`
+  - key is lsp method value is a filter handler function parameter are `client_id` `result`
 
-## Default KeyMap
+## Default Keymap
 
 these are defaule keymaps in `finder.keys` table section.
 
-- `shuttle = '[w'`       shuttle bettween the finder layout window
+- `shuttle = '[w'` shuttle bettween the finder layout window
 - `toggle_or_open = 'o'` toggle expand or open
-- `vsplit = 's'`         open in vsplit
-- `split = 'i'`          open in split
-- `tabe = 't'`           open in tabe
-- `tabnew = 'r'`         open in new tab
-- `quit = 'q'`           quit the finder only work in layout left window
-- `close = '<C-c>k'`     close finder
+- `vsplit = 's'` open in vsplit
+- `split = 'i'` open in split
+- `tabe = 't'` open in tabe
+- `tabnew = 'r'` open in new tab
+- `quit = 'q'` quit the finder, only works in layout left window
+- `close = '<C-c>k'` close finder
 
-## How to change options
+## Advanced Configuration
 
 put the option which you want change in `setup` function parameter table. like
 
@@ -52,15 +59,13 @@ require('lspsaga').setup({
 })
 ```
 
-## Change Lsp Methods in finder
-
-There has two ways, First is from command this way has a high priority if you pass methods alais from command it will ignore `default` options. like `:Lspsaga finder imp` this will only show `implementation` or like `:Lspsaga finder def+ref` this will only show `definition` and `references` . like `:Lspsaga finder def+ref`.
+### Change Lsp Search Options
 
 ![image](https://github.com/nvimdev/lspsaga.nvim/assets/41671631/27541a92-9691-4df3-8d18-c4b88ec4ce5e)
 
-Second is change `default` option like `default = 'def+ref+imp'` it will show `definition` `references` `implementation`.
+You can change the `default` option like `default = 'def+ref+imp'` it will show `definition` `references` `implementation`. Or, you can specify the search options as command arguments, for instance `:Lspsaga finder def+ref` which will not show implementations. Note that command line options overrides the setup options
 
-You can use single alias or combine alias in `finder`. these are both correct.
+You can use single alias or combine alias in `finder`. The following are both correct.
 
 ```vim
 :Lspsaga finder ref      same as default = 'ref'
@@ -69,9 +74,9 @@ You can use single alias or combine alias in `finder`. these are both correct.
 
 and more with your custom `methods`. **This is the extensibility of finder now.**
 
-**How can i add new methods which i want show in finder ?**
+**How can I add new methods which I want show in finder ?**
 
-That's easy, config register the method to `methods` option table. key is method alias that you can use in command or `default` option. value is lsp method usually is `textDocument/foo` . example I want finder show `textDocument/typeDefinition`in finder need do like this.
+Simply put them in the config table. The methods table takes in a key which is method alias that you can use in command or `default` option, the value is the corresponding lsp method (usually `textDocument/foo` ). For example I want finder to show `textDocument/typeDefinition` in search results:
 
 ```lua
 require('lspsaga').setup({
@@ -83,32 +88,26 @@ require('lspsaga').setup({
 })
 ```
 
-then you can do `:Lspsaga finder tyd` or combine other methods `:Lspsaga finder tyd+ref+def`  or use in `default = 'typd+ref`
-example the image is `:Lspsaga finder tyd+ref+imp+def` same as `default ='tyd+ref+imp+def'`
+then you can do `:Lspsaga finder tyd` or combine other methods `:Lspsaga finder tyd+ref+def` or use in `default = 'typd+ref`
+Showcase: `:Lspsaga finder tyd+ref+imp+def` (same as `default ='tyd+ref+imp+def'`)
 
 ![image](https://github.com/nvimdev/lspsaga.nvim/assets/41671631/fcf2bb52-288f-480d-9c9e-342b4f450da7)
 
+By default there are 3 builtin aliases: `def` -> `textDocument/definition`, `ref` -> `textDocument/references`, `imp` -> `textDocuemnt/implementation`
 
-in default finder registered three mehtods which is `def` is `textDocument/definition` `ref` is `textDocument/references` `imp` is `textDocuemnt/implementation` . Then you can combine use these alias in command like
-
-```vim
-:Lspsaga finder aliais1+aliais2
-```
-
-Notice current indent highlight is  provider by `finder` not provide by any third-party plugin. it will disappear when you jump to other window. if you see the indent line provide by other indent plugin please consider add `sagafinder` filetype to that plugin exclude list.
+Notice current indent highlight is provided by `finder` and not by any third-party plugin. It will disappear when you jump to other windows. If you see the indent line provide by other indent plugin please consider add `sagafinder` filetype to that plugin's exclude list.
 
 ![Untitled](https://github.com/nvimdev/lspsaga.nvim/assets/41671631/009990db-5ba5-455b-ab3f-d9bd25904cf0)
 
+### Change Finder Layout
 
-## Change Finder Layout
-
-same as finder show lsp methods . you can use command or option to config it . if you don't pass any layout from command it will use `layout` option. available value is `normal ` and `layout` . a little different is when you want change layout from command you need `++` before the layout like `:Lspsaga finder ++normal`.
+Same as the search options. You can specify the layout either in the setup function or pass in a command arg (prefix it with `++`, for instance `:Lspsaga finder ++normal`), similarly, the command line argument overrides the config table. Available values are `normal ` and `layout` .
 
 ![image](https://github.com/nvimdev/lspsaga.nvim/assets/41671631/df566e6f-fd45-47c2-a34e-b70ab248f400)
 
-## Filter lsp methods result
+### Filter Search Results
 
-you can use `filter` option to filter lsp methods result key is method value is function parameter is `client_id` and `result`. return value is boolean, config it like
+You can use the `filter` option to filter lsp methods result, key is method and value is a lua function with parameter `client_id` and `result`. The function should return a boolean. As an example:
 
 ```lua
 require('lspsaga').setup({
@@ -116,14 +115,14 @@ require('lspsaga').setup({
     filter = {
       ['textDocument/references']  = function(client_id, result)
         -- your logic
-        return true or false
+        return true
       end
     }
   }
 })
 ```
 
-## Highlight
+### Highlight group
 
-- `SagaNormal` config layout normal background
-- `SagaBorder` config layout float window border
+- `SagaNormal` Window normal highlight for finder
+- `SagaBorder` Border for the float layout of finder
