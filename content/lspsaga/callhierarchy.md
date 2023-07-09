@@ -26,7 +26,7 @@ default keymaps in `callhierarchy.keys`
 - `vsplit = 's'` vsplit
 - `split = 'i'` split
 - `tabe = 't'` open in new tab
-- `quit = 'q'` quit f
+- `quit = 'q'` quit layout
 - `shuttle = '[w'` shuttle bettween the layout left and right
 - `toggle_or_req = 'u'` toggle or do request.
 - `close = '<C-c>k` close layout
