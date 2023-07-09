@@ -3,6 +3,10 @@ bookCollapseSection: true
 weight: 20
 ---
 
+<center>
+<img src="/lspsaga/logo.png" width="20%" height="20%"/>
+</center>
+
 ## Lspsaga
 
 Improves the neovim built-in lsp experience.
