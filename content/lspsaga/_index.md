@@ -56,6 +56,8 @@ three ways to lazy load `lspsaga`
 
 > [Implement: Easily see number of implementations and quickly jump to them](/lspsaga/implement)
 
+> [Float Term: A simply float terminal](/lspsaga/floaterm)
+
 > [Miscellaneous: Options that apply to all modules](/lspsaga/misc)
 
 ## Trouble Shooting
