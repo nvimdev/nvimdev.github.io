@@ -105,6 +105,16 @@ Same as the search options. You can specify the layout either in the setup funct
 
 ![image](https://github.com/nvimdev/lspsaga.nvim/assets/41671631/df566e6f-fd45-47c2-a34e-b70ab248f400)
 
+### Jump In Layout
+
+The right window also is `peek`, that mean you can do edit on right window. you can use the
+`keys.shuttle` jump between the window. jump to right or jump to left. suggest workflow is
+
+- `keys.shuttle` default is `[w` to right , do some edit `:w` save file
+- `keys.shuttle` to left or use `keys.close` to close layout window in right
+
+**keys.close** can both work on left or right of layout windows
+
 ### Filter Search Results
 
 You can use the `filter` option to filter lsp methods result, key is method and value is a lua function with parameter `client_id` and `result`. The function should return a boolean. As an example:

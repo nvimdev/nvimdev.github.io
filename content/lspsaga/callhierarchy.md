@@ -30,3 +30,6 @@ default keymaps in `callhierarchy.keys`
 - `shuttle = '[w'` shuttle bettween the layout left and right
 - `toggle_or_req = 'u'` toggle or do request.
 
+## Suggest Workflow
+
+Same as finder. use `keys.shuttlw` jump between the layout windows.
