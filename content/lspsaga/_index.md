@@ -3,9 +3,9 @@ bookCollapseSection: true
 weight: 20
 ---
 
-## What is the Lspsaga
+## Lspsaga
 
-Improve neovim built-in lsp experiences. 
+Improves the neovim built-in lsp experience.
 
 ## Install
 
@@ -15,7 +15,7 @@ Improve neovim built-in lsp experiences.
 require('lazy').setup(
     {
     'nvimdev/lspsaga.nvim',
-    ft = {filetypes}, -- or as lspconfig dependencies for lazyload
+    ft = {filetypes}, -- or you can make it an dependency of lspconfig
     config = function()
         require('lspsaga').setup({})
     end
@@ -23,30 +23,31 @@ require('lazy').setup(
 )
 ```
 
+## Modules
 
-## Features
+> [Finder: UI interface for advanced lsp symbol search](/lspsaga/finder)
 
-> [Finder an Ui interface show lsp methods result](/lspsaga/finder)
-
-> [Diagnostic Jump / Show](/lspsaga/diagnostic)
+> [Diagnostic: Jump between diagnostic and show them in pretty floats](/lspsaga/diagnostic)
 
 > [Peek Definition / Type Definition](/lspsaga/definition)
 
-> [Hover](/lspsaga/hover)
+> [Hover: Prettier hover actions](/lspsaga/hover)
 
-> [Rename](/lspsaga/rename)
+> [Rename: lsp rename and async project search & replace](/lspsaga/rename)
 
-> [Callhierarchy Icoming /Outgoing calls](/lspsaga/callhierarchy)
+> [Callhierarchy Incoming / Outgoing calls](/lspsaga/callhierarchy)
 
-> [Code Action](/lspsaga/codeaction)
+> [Code Action: pretty UI for code actions with live preview](/lspsaga/codeaction)
 
-> [LightBulb](/lspsaga/lightbulb)
+> [LightBulb: VSC like lightbulb indicating possible code actions](/lspsaga/lightbulb)
 
-> [Symbols In Winbar](/lspsaga/symbolswinbar)
+> [Breadcrumbs: IDE like symbol outline on your winbar](/lspsaga/breadcrumbs)
 
-> [Outline](/lspsaga/outline)
+> [Outline: IDE like symbols outline](/lspsaga/outline)
 
-> [Implement](/lspsaga/implement)
+> [Implement: Easily see number of implementations and quickly jump to them](/lspsaga/implement)
+
+> [Miscellaneous: Options that apply to all modules](/lspsaga/misc)
 
 ## Trouble Shooting
 
