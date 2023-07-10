@@ -30,6 +30,8 @@ These are default options in `finder` section of the setup table.
   - normal will use normal layout window priority is lower than command layout
 - `filter = {}`
   - key is lsp method value is a filter handler function parameter are `client_id` `result`
+- `silent = false`
+  - when is true it will disable show the no response message
 
 ## Default Keymap
 
