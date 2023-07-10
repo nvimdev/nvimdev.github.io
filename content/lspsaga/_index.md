@@ -21,7 +21,11 @@ require('lazy').setup(
     'nvimdev/lspsaga.nvim',
     config = function()
         require('lspsaga').setup({})
-    end
+    end,
+    dependenices = {
+        'nvim-treesitter/nvim-treesitter' optional
+        'nvim-tree/nvim-web-devicons'     optional
+    }
     }
 )
 ```
