@@ -1,5 +1,5 @@
 ---
-title: "Hover"
+title: "Float Terminal"
 tags:
   - lspasga
 weight: 10
