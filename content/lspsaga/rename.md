@@ -29,7 +29,7 @@ Default options in `rename` section:
 
 Default keymap in `rename.keys` section:
 
-- `quit = '<Esc>'` quit rename window or `project_replace` window
+- `quit = '<C-k>'` quit rename window or `project_replace` window
 - `exec = '<CR>'` execute rename in `rename` window or execute replace in `project_replace` window
 - `select = 'x'` select or cancel select item in `project_replace` float window
 
