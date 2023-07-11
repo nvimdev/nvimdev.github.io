@@ -7,35 +7,36 @@ weight: 10
 
 ## Usage
 
-Finder is an ui interface to show lsp methods search result.
+Finder is an UI to show LSP methods search result.
 
-Invoke `:Lspsaga finder` and you will see the finder window. By default it shows results for `references` and `implementation`.
+Invoke `:Lspsaga finder` and you will see the finder window.
+By default it shows results for `references` and `implementation`.
 
-![image](https://github.com/nvimdev/lspsaga.nvim/assets/41671631/1d957dda-5825-4d15-8d5a-ca5dd7ca63a9)
+![Finder](https://github.com/nvimdev/lspsaga.nvim/assets/41671631/1d957dda-5825-4d15-8d5a-ca5dd7ca63a9)
 
 ## Default Options
 
-These are default options in `finder` section of the setup table.
+These are default options in `finder` section:
 
 - `max_height = 0.5`
-  - max_height of the finder window
+  - `max_height` of the finder window
 - `left_width = 0.3`
-  - width of the left finder window
+  - Width of the left finder window
 - `default = 'ref+imp'`
-  - default search results shown, ref for `references` and imp for `implementation`
+  - Default search results shown, `ref` for "references" and `imp` for "implementation"
 - `methods = {}`
-  - key is alias of lsp methods, value is lsp methods which you want show in finder, more info below.
-  - for instance, methods = { 'tyd' = 'textDocument/typeDefinition' }
-- `layout = 'float'` available value is `normal` or `float`
-  - normal will use normal layout window priority is lower than command layout
+  - Keys are alias of LSP methods. Values are LSP methods, which you want show in finder. More info below
+  - For instance, `methods = { 'tyd' = 'textDocument/typeDefinition' }`
+- `layout = 'float'` available value is `normal` and `float`
+  - `normal` will use the normal layout window priority is lower than command layout
 - `filter = {}`
-  - key is lsp method value is a filter handler function parameter are `client_id` `result`
+  - Keys are LSP methods. Values are a filter handler. Function parameter are `client_id` and `result`
 - `silent = false`
-  - when is true it will disable show the no response message
+  - If it's `true`, it will disable show the no response message
 
-## Default Keymap
+## Default Keymaps
 
-these are defaule keymaps in `finder.keys` table section.
+These are default keymaps in `finder.keys` table section:
 
 - `shuttle = '[w'` shuttle bettween the finder layout window
 - `toggle_or_open = 'o'` toggle expand or open
@@ -48,7 +49,7 @@ these are defaule keymaps in `finder.keys` table section.
 
 ## Advanced Configuration
 
-put the option which you want change in `setup` function parameter table. like
+Put the option, which you want change in `setup` function parameter table like config below:
 
 ```lua
 require('lspsaga').setup({
@@ -61,24 +62,29 @@ require('lspsaga').setup({
 })
 ```
 
-### Change Lsp Search Options
+### Change LSP Search Options
 
-![image](https://github.com/nvimdev/lspsaga.nvim/assets/41671631/27541a92-9691-4df3-8d18-c4b88ec4ce5e)
+![LSP search option](https://github.com/nvimdev/lspsaga.nvim/assets/41671631/27541a92-9691-4df3-8d18-c4b88ec4ce5e)
 
-You can change the `default` option like `default = 'def+ref+imp'` it will show `definition` `references` `implementation`. Or, you can specify the search options as command arguments, for instance `:Lspsaga finder def+ref` which will not show implementations. Note that command line options overrides the setup options
+You can change the `default` option like `default = 'def+ref+imp'`. It will show "definition",
+"references", and "implementation". Or, you can specify the search options as command arguments,
+for instance `:Lspsaga finder def+ref` which will not show implementations.
+Note that command line options overrides the setup options.
 
-You can use single alias or combine alias in `finder`. The following are both correct.
+You can use single alias or combine alias in `finder`. The following are both correct:
 
 ```vim
-:Lspsaga finder ref      same as default = 'ref'
-:Lspsaga finder def+ref  same as default = 'def+ref'
+:Lspsaga finder ref      " same as default = 'ref'
+:Lspsaga finder def+ref  " same as default = 'def+ref'
 ```
 
-and more with your custom `methods`. **This is the extensibility of finder now.**
+And more with your custom `methods`. **This is the extensibility of finder now**.
 
-**How can I add new methods which I want show in finder ?**
+### How Can I Add New Methods Which I Want Show in Finder?
 
-Simply put them in the config table. The methods table takes in a key which is method alias that you can use in command or `default` option, the value is the corresponding lsp method (usually `textDocument/foo` ). For example I want finder to show `textDocument/typeDefinition` in search results:
+Simply put them in the config table. The methods table takes in a key which is method alias
+that you can use in command or `default` option. The value is the corresponding LSP method (usually `textDocument/foo`).
+For example, I want finder to show `textDocument/typeDefinition` in search results:
 
 ```lua
 require('lspsaga').setup({
@@ -90,36 +96,45 @@ require('lspsaga').setup({
 })
 ```
 
-then you can do `:Lspsaga finder tyd` or combine other methods `:Lspsaga finder tyd+ref+def` or use in `default = 'typd+ref`
+Then you can do `:Lspsaga finder tyd` or combine other methods such as `:Lspsaga finder tyd+ref+def` or use in `default = 'typd+ref'`.
+
 Showcase: `:Lspsaga finder tyd+ref+imp+def` (same as `default ='tyd+ref+imp+def'`)
 
-![image](https://github.com/nvimdev/lspsaga.nvim/assets/41671631/fcf2bb52-288f-480d-9c9e-342b4f450da7)
+![Finder showcase](https://github.com/nvimdev/lspsaga.nvim/assets/41671631/fcf2bb52-288f-480d-9c9e-342b4f450da7)
 
-By default there are 3 builtin aliases: `def` -> `textDocument/definition`, `ref` -> `textDocument/references`, `imp` -> `textDocuemnt/implementation`
+By default, there are 3 built-in aliases: `def` -> `textDocument/definition`, `ref` -> `textDocument/references`,
+and `imp` -> `textDocuemnt/implementation`.
 
-Notice current indent highlight is provided by `finder` and not by any third-party plugin. It will disappear when you jump to other windows. If you see the indent line provide by other indent plugin please consider add `sagafinder` filetype to that plugin's exclude list.
+Notice current indent highlight is provided by `finder` and not by any third-party plugin.
+It will disappear when you jump to other windows. If you see the indent line provide by other indent plugin,
+please consider add `sagafinder` filetype to that plugin's exclude list.
 
-![Untitled](https://github.com/nvimdev/lspsaga.nvim/assets/41671631/009990db-5ba5-455b-ab3f-d9bd25904cf0)
+![Finder highlight](https://github.com/nvimdev/lspsaga.nvim/assets/41671631/009990db-5ba5-455b-ab3f-d9bd25904cf0)
 
 ### Change Finder Layout
 
-Same as the search options. You can specify the layout either in the setup function or pass in a command arg (prefix it with `++`, for instance `:Lspsaga finder ++normal`), similarly, the command line argument overrides the config table. Available values are `normal ` and `layout` .
+Same as the search options, you can specify the layout either in the setup function or pass in a command arg
+(prefix it with `++`, for instance `:Lspsaga finder ++normal`). Similarly, the command line argument overrides the config table. 
+Available values are `normal` and `layout`.
 
-![image](https://github.com/nvimdev/lspsaga.nvim/assets/41671631/df566e6f-fd45-47c2-a34e-b70ab248f400)
+![Finder layout](https://github.com/nvimdev/lspsaga.nvim/assets/41671631/df566e6f-fd45-47c2-a34e-b70ab248f400)
 
 ### Jump In Layout
 
-The right window also is `peek`, that mean you can do edit on right window. you can use the
-`keys.shuttle` jump between the window. jump to right or jump to left. suggest workflow is
+The right window also is `peek`. That means, you can do edit on right window.
 
-- `keys.shuttle` default is `[w` to right , do some edit `:w` save file
+You can use the `keys.shuttle` to jump between the window, jump to right, or jump to left. Suggest workflow is:
+
+- `keys.shuttle` default is `[w` to right. Do some edit, `:w` save file
 - `keys.shuttle` to left or use `keys.close` to close layout window in right
 
-**keys.close** can both work on left or right of layout windows
+**keys.close** can both work on left or right of layout windows.
 
-### Filter Search Results
+### Filter Search Result
 
-You can use the `filter` option to filter lsp methods result, key is method and value is a lua function with parameter `client_id` and `result`. The function should return a boolean. As an example:
+You can use the `filter` option to filter LSP methods result. The keys are method, 
+and values are Lua function with `client_id` and `result` parameter.
+The function should return a boolean. As an example:
 
 ```lua
 require('lspsaga').setup({
@@ -134,7 +149,7 @@ require('lspsaga').setup({
 })
 ```
 
-### Highlight group
+### Highlight Group
 
-- `SagaNormal` Window normal highlight for finder
-- `SagaBorder` Border for the float layout of finder
+- `SagaNormal` window normal highlight for finder
+- `SagaBorder` border for the float layout of finder
