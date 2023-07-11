@@ -5,11 +5,11 @@ weight: 20
 
 # [indentmini.nvim](https://github.com/nvimdev/indentmini.nvim)
 
-A minimal and blazing fast indentline plugin by using `nvim_set_decoration_provide` api
+A minimal and blazing fast indent line plugin by using `nvim_set_decoration_provide` API.
 
-## Install
+## Installation 
 
-- Lazy.nvim
+### lazy.nvim 
 
 ```lua
 require('lazy').setup({
@@ -21,25 +21,27 @@ require('lazy').setup({
 })
 ```
 
-## Config
+## Configuration
 
-- char -- string type, default is `│`,
-- exclude -- table type, add excluded filetype in this table
+- `char` -- string type. Default is `│`
+- `exclude` -- table type. Add excluded file types in this table
 
-Highlight group is `IndentLine`. You can use this to link it to `Comment`
+Highlight group is `IndentLine`. You can use this to link it to `Comment`.
 
 ```lua
 config = function()
-    require("indentmini").setup({
-        char = "|",
+    require('indentmini').setup({
+        char = '|',
         exclude = {
-            "erlang",
-            "markdown",
+            'erlang',
+            'markdown',
         }
     })
     -- use comment color
-    vim.cmd.highlight("default link IndentLine Comment")
+    vim.cmd.highlight('default link IndentLine Comment')
 end,
 ```
 
-## License MIT
+## License
+
+Licensed under the [MIT](https://github.com/nvimdev/indentmini.nvim/blob/main/LICENSE) license.

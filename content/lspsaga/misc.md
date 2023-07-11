@@ -7,37 +7,37 @@ weight: 10
 
 ## Generic UI Options
 
-Generic options for the lspsaga UI
+Generic options for the Lspsaga UI:
 
 - `border = 'single'`
-  - border type, see `:help nvim_open_win`
+  - Border type, see `:help nvim_open_win`
 - `devicon = true`
-  - whether to use nvim-web-devicon
+  - Whether to use nvim-web-devicons
 - `title = true`
-  - show title in some float window
+  - Show title in some float window
 - `expand = '⊞'`
-  - expand icon
+  - Expand icon
 - `collapse = '⊟'`
-  - collapse icon
+  - Collapse icon
 - `code_action = '💡'`
-  - code action icon
+  - Code action icon
 - `actionfix = ' '`
-  - action fix icon
+  - Action fix icon
 - `lines = { '┗', '┣', '┃', '━', '┏' }`
-  - symbols used in virtual text connect
+  - Symbols used in virtual text connect
 - `kind = {}`
-  - lsp kind custom table
+  - LSP kind custom table
 - `imp_sign = '󰳛 '`
-  - implement icon
+  - Implement icon
 
 ## Beacon
 
-In lspsaga some commands jump around in buffer(s). With beacon enabled it will show a beacon to tell you where the cursor is.
+In Lspsaga, some commands jump around in buffer(s). With beacon enabled, it will show a beacon to tell you where the cursor is.
 
 - `enable = true`
 - `frequency = 7`
 
-## Scrolling keymap
+## Scrolling Keymaps
 
 Default keymap of `scroll_preview`. For some commands you can use these to scroll within the preview window.
 
