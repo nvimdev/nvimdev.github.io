@@ -7,7 +7,7 @@ weight: 10
 
 ## Usage
 
-Run `:Lspsaga lsp_rename`. Other than opening the float input window, it will also highlight the references in this buffer.
+Run `:Lspsaga rename`. Other than opening the float input window it will also highlight the references in this buffer.
 
 ![Rename](https://github.com/nvimdev/lspsaga.nvim/assets/41671631/bb81149a-d24e-4f14-a8b5-ddf0cc1d9908)
 
