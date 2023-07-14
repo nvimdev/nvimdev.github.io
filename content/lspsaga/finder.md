@@ -12,7 +12,7 @@ Finder is an UI to show LSP methods search result.
 Invoke `:Lspsaga finder` and you will see the finder window.
 By default it shows results for `references` and `implementation`.
 
-![Finder](https://github.com/nvimdev/lspsaga.nvim/assets/41671631/1d957dda-5825-4d15-8d5a-ca5dd7ca63a9)
+![image](https://github.com/nvimdev/lspsaga.nvim/assets/41671631/e897f717-e2e1-4d28-a4d6-1d12afd707e3)
 
 ## Default Options
 
@@ -147,6 +147,15 @@ require('lspsaga').setup({
     }
   }
 })
+```
+
+### Vsplit/Split in an exist window
+
+when you have multiple window which create by split or vsplit and you want open file in these window
+by using `vsplit` `split` keymap in finder . you can use `++inexist` flag in command .like
+
+```
+:Lspsaga finder ++inexist
 ```
 
 ### Highlight Group
