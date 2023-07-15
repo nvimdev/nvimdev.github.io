@@ -3,6 +3,10 @@ title: Welcome to nvimdev!
 enableToc: false
 ---
 
+<center>
+<img src="/logo.png" width="20%" height="20%"/>
+</center>
+
 ## What is nvimdev?
 
 **nvimdev** is an organization that maintains all the plugins made by [glepnir](https://github.com/glepnir).
