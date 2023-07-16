@@ -19,9 +19,11 @@ By default it shows results for `references` and `implementation`.
 These are default options in `finder` section:
 
 - `max_height = 0.5`
-  - `max_height` of the finder window
+  - `max_height` of the finder window (float layout)
 - `left_width = 0.3`
-  - Width of the left finder window
+  - Width of the left finder window (float layout)
+- `right_width = 0.3`
+  - Width of the right finder window (float layout)
 - `default = 'ref+imp'`
   - Default search results shown, `ref` for "references" and `imp` for "implementation"
 - `methods = {}`
