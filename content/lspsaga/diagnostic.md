@@ -7,7 +7,7 @@ weight: 10
 
 ## Usage
 
-Invoke `:Lspsaga diangostic_jump_next` and `:Lspsaga diagnostic_jump_prev` to jump around diagnostics.
+Invoke `:Lspsaga diagnostic_jump_next` and `:Lspsaga diagnostic_jump_prev` to jump around diagnostics.
 When the current cursor position has a diagnostic available, the commands will show the diagnostic in a nice float.
 
 ![Diagnostic](https://github.com/nvimdev/lspsaga.nvim/assets/41671631/d88f9d9f-fae1-47ca-94d2-8ef536e4eb7f)
