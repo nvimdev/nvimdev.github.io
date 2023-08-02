@@ -1,4 +1,4 @@
-baseURL: https://dev.neovim.pro
+baseURL: https://nvimdev.github.io
 
 # Book configuration
 disablePathToLower: true
