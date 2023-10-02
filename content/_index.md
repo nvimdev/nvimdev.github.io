@@ -45,7 +45,11 @@ enableToc: false
 
 <iframe src="https://github.com/sponsors/glepnir/button" title="Sponsor glepnir" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>
 
-![WeChat or PayPal](/donate.png)
+![WeChat or Alipay](/donate.png)
+
+<a href="https://paypal.me/bobbyhub"/>
+<img src="/blue.png"  height="50%" width="50%"/>
+</a>
 
 ## Backers
 
