@@ -11,7 +11,7 @@ weight: 20
 
 Improves the Neovim built-in LSP experience.
 
-## Installation  
+## Installation
 
 ### lazy.nvim
 
@@ -22,8 +22,8 @@ require('lazy').setup({
         require('lspsaga').setup({})
     end,
     dependencies = {
-        'nvim-treesitter/nvim-treesitter' -- optional
-        'nvim-tree/nvim-web-devicons'     -- optional
+        'nvim-treesitter/nvim-treesitter', -- optional
+        'nvim-tree/nvim-web-devicons',     -- optional
     }
 })
 ```
@@ -74,7 +74,7 @@ use ({
 
 > [Miscellaneous: Options that apply to all modules](/lspsaga/misc)
 
-## Troubleshooting 
+## Troubleshooting
 
 > [Create an issue](https://github.com/nvimdev/lspsaga.nvim/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml)
 
