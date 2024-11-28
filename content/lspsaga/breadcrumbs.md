@@ -39,5 +39,5 @@ Default options in `symbol_in_winbar` section:
 There's an API that you can use to get the `stl` format symbol string that you can use in statusline.
 
 ```lua
-require(lspsaga.symbol.winbar).get_bar()
+require('lspsaga.symbol.winbar').get_bar()
 ```
