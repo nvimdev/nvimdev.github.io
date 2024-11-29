@@ -56,10 +56,10 @@ Put the option, which you want change in `setup` function parameter table like c
 ```lua
 require('lspsaga').setup({
   finder = {
-    max_height = 0.6
+    max_height = 0.6,
     keys = {
-      vsplit = 'v'
-    }
+      vsplit = 'v',
+    },
   }
 })
 ```
